@@ -7,6 +7,7 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class AdminPost extends AbstractAdmin
 {
@@ -29,6 +30,16 @@ class AdminPost extends AbstractAdmin
                 null,
                 [
                     'label' => 'post.description',
+                ]
+            )->add(
+                '_action',
+                'actions',
+                [
+                    'actions' => [
+                        'edit'   => [],
+                        'show' => [],
+                        'delete' => [],
+                    ],
                 ]
             );
     }
@@ -59,7 +70,31 @@ class AdminPost extends AbstractAdmin
                 'description',
                 null,
                 [
-                    'label' => 'field.date.created',
+                    'label' => 'post.description',
+                ]
+            );
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function configureShowFields(ShowMapper $filter)
+    {
+
+        /** @noinspection ExceptionsAnnotatingAndHandlingInspection */
+        $filter
+            ->add(
+                'title',
+                null,
+                [
+                    'label' => 'post.title',
+                ]
+            )
+            ->add(
+                'description',
+                null,
+                [
+                    'label' => 'post.description',
                 ]
             );
     }

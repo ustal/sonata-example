@@ -23,6 +23,7 @@
         "sonata-project/admin-bundle": "^3.33",
         "sonata-project/doctrine-orm-admin-bundle": "^3.4",
         "sonata-project/translation-bundle": "^2.3",
+        "symfony/intl": "^3.4",
         "symfony/monolog-bundle": "^3.1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.6.4",

@@ -1,3 +1,10 @@
 post:
   title: Титул
   description: Описание
+
+
+entity:
+  post: Пост
+
+group:
+  site: Сайт
