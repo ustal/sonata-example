@@ -54,15 +54,19 @@ doctrine:
         #path: '%database_path%'
 
     orm:
-        auto_mapping: true
+#        auto_mapping: true
         # the standard distribution overrides this to be true in debug, false otherwise
         auto_generate_proxy_classes: false
         proxy_namespace: Proxies
         proxy_dir: '%kernel.cache_dir%/doctrine/orm/Proxies'
         default_entity_manager: default
-        metadata_cache_driver: array
-        query_cache_driver: array
-        result_cache_driver: array
+#        metadata_cache_driver: array
+#        query_cache_driver: array
+#        result_cache_driver: array
+        entity_managers:
+            default:
+                mappings:
+                    AppBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
